@@ -7,13 +7,6 @@
 - **向量索引构建**：`build_index.py` 用于从Excel文件中提取数据，进行分句，生成嵌入，并存储到ChromaDB向量数据库
 - **Web服务**：`app.py` 提供检索服务，使用混合检索策略(BM25+向量检索)，通过Ollama API调用大模型生成回答
 
-## 技术特点
-
-- **直接使用ChromaDB API**：移除了对`langchain-chroma`和`langchain-ollama`的依赖，避免版本冲突
-- **自定义检索器**：实现了与LangChain兼容的接口，保留混合检索功能
-- **优化嵌入计算**：使用`sentence-transformers`进行高效的嵌入生成
-- **直接REST API**：通过`requests`直接调用Ollama API，降低依赖复杂度
-
 ## 依赖说明
 
 系统主要依赖：
